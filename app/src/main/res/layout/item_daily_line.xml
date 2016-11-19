@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:gravity="center_vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:baselineAligned="false">
+
+    <ImageView
+        android:id="@+id/iv_daily_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:padding="4dp"
+        app:srcCompat="@drawable/place_holder"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:paddingTop="4dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_daily_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11.11"
+                android:textColor="#203240"
+                android:textSize="22sp"/>
+            <TextView
+                android:id="@+id/tv_daily_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingStart="80dp"
+                android:paddingEnd="4dp"
+                android:paddingTop="4dp"
+                android:textColor="#203240"
+                android:text="多云"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_daily_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:paddingTop="8dp"
+            android:textSize="10sp"
+            android:text="微风.湿度45%, 能见度10km"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="6dp"
+        android:gravity="start">
+        <TextView
+            android:id="@+id/tv_daily_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12℃"/>
+        <TextView
+            android:id="@+id/tv_daily_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="29℃"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingRight="8dp"
+        android:paddingTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_daily_sunrise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:paddingRight="4dp"
+            android:gravity="center_vertical"
+            android:drawableStart="@drawable/ic_sunrise"
+            android:text="17:56"/>
+        <TextView
+            android:id="@+id/tv_daily_sunset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:paddingRight="4dp"
+            android:gravity="center_vertical"
+            android:drawableStart="@drawable/ic_sunset"
+            android:text="17:53"
+            />
+    </LinearLayout>
+
+</LinearLayout>

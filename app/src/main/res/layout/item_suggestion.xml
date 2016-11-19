@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="生活指南"
+            android:textColor="#203240"
+            android:paddingLeft="6dp"
+            android:paddingTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="32dp"
+        android:paddingBottom="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/LinearParent">
+            <ImageView
+                style="@style/SuggestionIcon"
+                android:src="@drawable/icon_comf"/>
+
+            <LinearLayout
+                style="@style/LinearChild">
+
+                <TextView
+                    android:id="@+id/tv_comf_brf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#203240"
+                    android:text="综合指数---"/>
+
+                <TextView
+                    android:id="@+id/tv_comf_txt"
+                    style="@style/SuggestionText"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearParent">
+
+            <ImageView
+                style="@style/SuggestionIcon"
+                android:src="@drawable/icon_car"/>
+
+            <LinearLayout
+                style="@style/LinearChild">
+
+                <TextView
+                    android:id="@+id/tv_cw_brf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#203240"
+                    android:text="洗车指数---"/>
+
+                <TextView
+                    android:id="@+id/tv_cw_txt"
+                    style="@style/SuggestionText"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearParent">
+
+            <ImageView
+                style="@style/SuggestionIcon"
+                android:src="@drawable/icon_cloth"/>
+
+            <LinearLayout
+                style="@style/LinearChild">
+
+                <TextView
+                    android:id="@+id/tv_drsg_brf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#203240"
+                    android:text="穿衣指数---"/>
+
+                <TextView
+                    android:id="@+id/tv_drsg_txt"
+                    style="@style/SuggestionText"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearParent">
+
+            <ImageView
+                style="@style/SuggestionIcon"
+                android:src="@drawable/icon_flu"/>
+
+            <LinearLayout
+                style="@style/LinearChild">
+
+                <TextView
+                    android:id="@+id/tv_flu_brf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#203240"
+                    android:text="感冒指数---"/>
+
+                <TextView
+                    android:id="@+id/tv_flu_txt"
+                    style="@style/SuggestionText"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearParent">
+
+            <ImageView
+                style="@style/SuggestionIcon"
+                android:src="@drawable/icon_sport"/>
+
+            <LinearLayout
+                style="@style/LinearChild">
+
+                <TextView
+                    android:id="@+id/tv_sport_brf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#203240"
+                    android:text="运动指数---"/>
+
+                <TextView
+                    android:id="@+id/tv_sport_txt"
+                    style="@style/SuggestionText"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearParent">
+
+            <ImageView
+                style="@style/SuggestionIcon"
+                android:src="@drawable/icon_travel"/>
+
+            <LinearLayout
+                style="@style/LinearChild">
+                <TextView
+                    android:id="@+id/tv_trav_brf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#203240"
+                    android:text="旅游指数---"/>
+
+                <TextView
+                    android:id="@+id/tv_trav_txt"
+                    style="@style/SuggestionText"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearParent">
+            <ImageView
+                style="@style/SuggestionIcon"
+                android:src="@drawable/icon_uv"/>
+
+            <LinearLayout
+                style="@style/LinearChild">
+                <TextView
+                    android:id="@+id/tv_uv_brf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#203240"
+                    android:text="紫外线指数---"/>
+
+                <TextView
+                    android:id="@+id/tv_uv_txt"
+                    style="@style/SuggestionText"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
