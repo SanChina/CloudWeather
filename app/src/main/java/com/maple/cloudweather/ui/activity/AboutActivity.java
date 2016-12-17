@@ -36,7 +36,7 @@ public class AboutActivity extends AppCompatActivity {
     Button mBtCode;
     @BindView(R.id.bt_blog)
     Button mBtBlog;
-    @BindView(R.id.bt_pay)
+    @BindView(R.id.bt_weibo)
     Button mBtPay;
     @BindView(R.id.bt_share)
     Button mBtShare;
@@ -70,15 +70,17 @@ public class AboutActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick({R.id.bt_code, R.id.bt_blog, R.id.bt_pay, R.id.bt_share, R.id.bt_update, R.id.bt_bug})
+    @OnClick({R.id.bt_code, R.id.bt_blog, R.id.bt_weibo, R.id.bt_share, R.id.bt_update, R.id.bt_bug})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_code:
-                visitWeb();
+                visitWeb(getString(R.string.github_url));
                 break;
             case R.id.bt_blog:
+                visitWeb(getString(R.string.jianshu_url));
                 break;
-            case R.id.bt_pay:
+            case R.id.bt_weibo:
+                visitWeb(getString(R.string.weibo_url));
                 break;
             case R.id.bt_share:
                 Intent intent = new Intent(Intent.ACTION_SEND);

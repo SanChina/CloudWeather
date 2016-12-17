@@ -187,6 +187,32 @@ public class HomeFragment extends BaseFragment implements AMapLocationListener {
         mLocationClient = null;//销毁定位客户端，同时销毁本地定位服务。
     }
 
+    /*private void showShare() {
+        Bitmap icon = takeScreenShot(getActivity());
+        Intent share = new Intent(Intent.ACTION_SEND);
+        share.setType("image/jpeg");
+
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.TITLE, "title");
+        values.put(MediaStore.Images.Media.DESCRIPTION, "红楼梦红楼梦红楼梦红楼梦");
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+        Uri uri = getActivity().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                values);
+
+
+        OutputStream os;
+        try {
+            os = getActivity().getContentResolver().openOutputStream(uri);
+            icon.compress(Bitmap.CompressFormat.JPEG, 100, os);
+            os.close();
+        } catch (Exception e) {
+            System.err.println(e.toString());
+        }
+
+        share.putExtra(Intent.EXTRA_STREAM, uri);
+        startActivity(Intent.createChooser(share, "Share Image"));
+    }*/
+
     private void showShare() {
 //        ShareSDK.initSDK(this);
         ShareSDK.initSDK(getActivity());
@@ -274,7 +300,9 @@ public class HomeFragment extends BaseFragment implements AMapLocationListener {
 
     private void getDataFromNet() {
         mName = PrefUtil.getString("city_name", "北京");
+//        UIUtil.replaceCity(mName);
 //        mName = UIUtil.replaceCity(mName);
+//        Log.d("TTTTTTTTTT", "TTTTTT" + mName);
         Observable<Weather> observable =
                 RetrofitSingleton.getInstance().fetchWeather(mName).compose(this.<Weather>bindToLifecycle());
 
@@ -318,7 +346,7 @@ public class HomeFragment extends BaseFragment implements AMapLocationListener {
                     public void onNext(Weather weather) {
                         mWeather.status = weather.status;
                         mWeather.aqi = weather.aqi;
-                        mWeather.aqi.city = weather.aqi.city;
+//                        mWeather.aqi.city = weather.aqi.city;
 
                         mWeather.basic = weather.basic;
                         mWeather.basic.update = weather.basic.update;

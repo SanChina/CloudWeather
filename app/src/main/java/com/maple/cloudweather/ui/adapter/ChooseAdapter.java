@@ -46,7 +46,8 @@ public class ChooseAdapter extends RecyclerView.Adapter<ChooseAdapter.ChooseView
 
     @Override
     public int getItemCount() {
-        return mList.size();
+
+        return mList.size() > 0 ? mList.size() : 0;
     }
 
     public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {

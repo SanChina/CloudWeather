@@ -15,6 +15,8 @@ import com.bumptech.glide.Glide;
 import com.maple.cloudweather.R;
 import com.maple.cloudweather.domain.Weather;
 import com.maple.cloudweather.uitl.UIUtil;
+import com.maple.cloudweather.view.AqiView;
+import com.maple.cloudweather.view.WindView;
 
 import java.util.List;
 
@@ -78,6 +80,10 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
         RelativeLayout mWeatherDialogRoot;
         @BindView(R.id.cardView)
         CardView mCardView;
+        @BindView(R.id.wind_view)
+        WindView mWindView;
+        @BindView(R.id.aqi_view)
+        AqiView mAqiView;
         public MoreViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -85,6 +91,8 @@ public class MoreAdapter extends RecyclerView.Adapter<MoreAdapter.MoreViewHolder
 
         public void bindData(Weather weather) {
             try {
+                mWindView.setData(weather); //12:17By San
+                mAqiView.setData(weather);
                 mDialogCity.setText(weather.basic.city);
                 mDialogTemp.setText(String.format("%s℃", weather.now.tmp));
                 mDialogPm25.setText(String.format("PM2.5: %s μg/m³", weather.aqi.city.pm25));

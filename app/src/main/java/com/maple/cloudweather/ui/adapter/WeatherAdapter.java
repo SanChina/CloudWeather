@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.maple.cloudweather.R;
 import com.maple.cloudweather.domain.Weather;
 import com.maple.cloudweather.ui.holder.BaseViewHolder;
+import com.maple.cloudweather.uitl.UIUtil;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
@@ -125,8 +126,9 @@ public class WeatherAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 mTvCity.setText(String.format("%s ", weather.basic.city));
                 mTvDesc.setText(String.format(" %s", weather.now.cond.txt));
                 mUpdateTime.setText(String.format("今天%s发布", weather.basic.update.loc.substring(11)));
-                mTvQuality.setText(String.format("空气指数: %s | %s", weather.aqi.city.aqi, weather.aqi.city.qlty));
-                mTvTempPm.setText(String.format("PM2.5: %s μg/m³", weather.aqi.city.pm25));
+
+                mTvQuality.setText(String.format("空气指数: %s | %s", UIUtil.safeText(weather.aqi.city.aqi), UIUtil.safeText(weather.aqi.city.qlty)));
+                mTvTempPm.setText(String.format("PM2.5: %s μg/m³", UIUtil.safeText(weather.aqi.city.pm25)));
                 mTvTempHum.setText(String.format("空气湿度: %s %%", weather.now.hum));
                 mTvTempFl.setText(String.format("体感温度: %s℃", weather.now.fl));
                 String url = "http://files.heweather.com/cond_icon/" + weather.now.cond.code + ".png";

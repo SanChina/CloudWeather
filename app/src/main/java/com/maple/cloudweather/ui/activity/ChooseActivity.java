@@ -28,7 +28,6 @@ import com.maple.cloudweather.uitl.Utility;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import butterknife.BindView;
@@ -132,12 +131,23 @@ public class ChooseActivity extends RxAppCompatActivity {
 //                    mRecyclerView.scrollToPosition(0);
                     queryCities();
                     mAdapter.notifyDataSetChanged();
-//                    mRecyclerView.scrollToPosition(0);
                 } else if (currentLevel == LEVEL_CITY) {
-                    selectedCity = mCityList.get(position);
+                    /*selectedCity = mCityList.get(position);
                     queryCounty();
-                    mAdapter.notifyDataSetChanged();
-//                    mRecyclerView.scrollToPosition(0);
+                    mAdapter.notifyDataSetChanged();*/
+                    String name = mCityList.get(position).getCityName();
+                    System.out.println(name);
+                    if (isChecked) {
+                        City city = new City();
+                        city.setCityName(name);
+
+                        db.saveMoreCity(city);
+                        RxBus.getDefault().post(new MultiUpdate());
+                    } else {
+                        PrefUtil.putString("city_name", name);
+                        RxBus.getDefault().post(new ChangeCityEvent());
+                    }
+                    finish();
                 } else if (currentLevel == LEVEL_COUNTY) {
                     String name = mCountyList.get(position).getCountyName();
                     System.out.println(name);
@@ -175,11 +185,12 @@ public class ChooseActivity extends RxAppCompatActivity {
 
         mList = new ArrayList<>();
         cloudWeatherDB = CloudWeatherDB.getInstance(this);
-        String[] provinces = new String[]{"北京", "上海", "天津", "重庆", "黑龙江", "吉林",
+        /*String[] provinces = new String[]{"北京", "上海", "天津", "重庆", "黑龙江", "吉林",
                 "辽宁", "内蒙古", "河北", "山西", "陕西", "山东", "新疆", "西藏", "青海",
                 "甘肃", "宁夏", "河南", "江苏", "湖北", "浙江", "安徽", "福建", "江西",
-                "湖南", "贵州", "四川", "广东", "云南", "广西", "海南", "香港", "澳门", "台湾"};
-        mList.addAll(Arrays.asList(provinces));
+                "湖南", "贵州", "四川", "广东", "云南", "广西", "海南", "香港", "澳门", "台湾"};*/
+
+//        mList.addAll(Arrays.asList(provinces));
         mAdapter = new ChooseAdapter(mList);
         queryProvinces();
     }
@@ -200,15 +211,15 @@ public class ChooseActivity extends RxAppCompatActivity {
                         switch (type) {
                             case "province":
                                 result = Utility.handleProvincesResponse(cloudWeatherDB, response);
-                                queryProvinces();
+//                                queryProvinces();
                                 break;
                             case "city":
                                 result = Utility.handleCitiesResponse(cloudWeatherDB, response, selectedProvince.getId());
-                                queryCities();
+//                                queryCities();
                                 break;
                             case "county":
                                 result = Utility.handleCountyResponse(cloudWeatherDB, response, selectedCity.getId());
-                                queryCounty();
+//                                queryCounty();
                                 break;
                         }
                         if (result) {
@@ -245,7 +256,9 @@ public class ChooseActivity extends RxAppCompatActivity {
             for (County county : mCountyList) {
                 mList.add(county.getCountyName());
             }
+            mAdapter.notifyDataSetChanged();
             currentLevel = LEVEL_COUNTY;
+            mRecyclerView.scrollToPosition(0);
         } else {
             getDataFromServer(selectedCity.getCityCode(), "county");
         }
@@ -261,7 +274,7 @@ public class ChooseActivity extends RxAppCompatActivity {
             }
             mAdapter.notifyDataSetChanged();
             currentLevel = LEVEL_CITY;
-//            mRecyclerView.scrollToPosition(0);
+            mRecyclerView.scrollToPosition(0);
         } else {
             getDataFromServer(selectedProvince.getProvinceCode(), "city");
         }

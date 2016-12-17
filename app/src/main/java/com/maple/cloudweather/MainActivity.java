@@ -5,7 +5,6 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -76,8 +75,8 @@ public class MainActivity extends RxAppCompatActivity
                     mFab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                                    .setAction("Action", null).show();
+                            /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();*/
                             showFabDialog();
 
                         }
@@ -110,15 +109,16 @@ public class MainActivity extends RxAppCompatActivity
                         .setAction("Action", null).show();*/
                 mFab.setImageResource(R.drawable.ic_map_black);
                 mFab.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(MainActivity.this, R.color.colorAccent)));
-                mFab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                        showFabDialog();
-
-                    }
-                });
+                showFabDialog();
+//                mFab.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                                .setAction("Action", null).show();*/
+//                        showFabDialog();
+//
+//                    }
+//                });
             }
         });
 

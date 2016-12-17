@@ -106,13 +106,13 @@
                 android:drawablePadding="12dp"
                 android:drawableStart="@drawable/home"
                 android:gravity="start|center_vertical"
-                android:text="查看个人博客"
+                android:text="查看个人简书"
                 android:textColor="@color/defaultTextColor"
                 tools:targetApi="lollipop"/>
             <Button
                 android:paddingEnd="12dp"
                 android:paddingStart="12dp"
-                android:id="@+id/bt_pay"
+                android:id="@+id/bt_weibo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
@@ -120,7 +120,7 @@
                 android:drawablePadding="12dp"
                 android:drawableStart="@drawable/pay"
                 android:gravity="start|center_vertical"
-                android:text="随意捐赠支持"
+                android:text="关注个人微博"
                 android:textColor="@color/defaultTextColor"
                 tools:targetApi="lollipop"/>
 
@@ -135,7 +135,7 @@
                 android:drawablePadding="12dp"
                 android:drawableStart="@drawable/share"
                 android:gravity="start|center_vertical"
-                android:text="分享就看天气"
+                android:text="分享枫叶天气"
                 android:textColor="@color/defaultTextColor"
                 tools:targetApi="lollipop"/>
             <Button

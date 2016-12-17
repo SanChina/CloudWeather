@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="6dp"
                 android:paddingTop="8dp"
-                android:text="空气质量指数:250|重度污染"
+                android:text="空气指数:250|重度污染"
                 android:textSize="12sp"
                 android:textColor="#203240"/>
         </LinearLayout>

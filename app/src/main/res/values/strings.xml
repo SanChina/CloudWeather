@@ -12,6 +12,10 @@
     慕枫接触Android开发一年有余, 期间断断续续, 本次开发是一种尝试,亦是一个学习过程,开发的过程中,遇到过很多困难, 而且,截至到目前,尚有一些小问题不曾解决. 但仍在努力中.</string>
     <string name="open_source">• ButterKnife https://github.com/JakeWharton/butterknife\n• RxJava: github.com/ReactiveX/RxJava\n• RxAndroid: github.com/ReactiveX/RxAndroid\n• Retrofit: github.com/square/retrofit\n• OkHttp https://github.com/square/okhttp\n• Picasso https://github.com/square/picasso</string>
 
+    <string name="github_url">https://github.com/SanChina/CloudWeather</string>
+    <string name="weibo_url">http://weibo.com/zhangmingshan001</string>
+    <string name="jianshu_url">http://www.jianshu.com/users/bd82fec237cc/latest_articles</string>
+
     <string name="open_butter_knife">Copyright 2013 Jake Wharton \n
         Licensed under the Apache License, Version 2.0 (the "License"); \n
         you may not use this file except in compliance with the License. \n
